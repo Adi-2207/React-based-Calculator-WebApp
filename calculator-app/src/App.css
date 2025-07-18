@@ -1,0 +1,119 @@
+body, html, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.calculator-container {
+  min-height: 100vh;
+  min-width: 100vw;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #e0e7ef 0%, #232323 100%);
+  box-sizing: border-box;
+}
+
+.calculator {
+  background: #222;
+  border-radius: 2rem;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.25), 0 1.5rem 3rem #00000022;
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  width: 320px;
+  max-width: 95vw;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.calculator-display {
+  background: #111;
+  color: #fff;
+  font-size: 2.5rem;
+  border-radius: 1rem;
+  padding: 1.2rem 1rem;
+  text-align: right;
+  min-height: 3.5rem;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.calculator-buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.7rem;
+}
+
+.calc-btn {
+  font-size: 1.3rem;
+  padding: 1.1rem 0;
+  border: none;
+  border-radius: 50%;
+  background: #333;
+  color: #fff;
+  transition: background 0.2s, transform 0.1s;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+  cursor: pointer;
+  outline: none;
+  will-change: background, transform;
+}
+.calc-btn:hover {
+  background: #444;
+  transform: scale(1.07);
+}
+
+/* Special button colors */
+.calc-btn-AC,
+.calc-btn-plusminus,
+.calc-btn-percent {
+  background: #a5a5a5;
+  color: #222;
+}
+.calc-btn-AC:hover,
+.calc-btn-plusminus:hover,
+.calc-btn-percent:hover {
+  background: #bdbdbd;
+}
+.calc-btn-divide,
+.calc-btn-multiply,
+.calc-btn-minus,
+.calc-btn-plus {
+  background: #ff9500;
+  color: #fff;
+}
+.calc-btn-divide:hover,
+.calc-btn-multiply:hover,
+.calc-btn-minus:hover,
+.calc-btn-plus:hover {
+  background: #ffa733;
+}
+.calc-btn-equals {
+  background: #ff9500;
+  color: #fff;
+  grid-column: span 2;
+  border-radius: 2rem;
+}
+
+/* Make 0 button span two columns */
+.calc-btn-0 {
+  grid-column: span 2;
+  border-radius: 2rem;
+}
+
+@media (max-width: 400px) {
+  .calculator {
+    padding: 1rem 0.5rem 1rem 0.5rem;
+    width: 98vw;
+  }
+  .calculator-display {
+    font-size: 2rem;
+    padding: 0.8rem 0.5rem;
+  }
+  .calc-btn {
+    font-size: 1rem;
+    padding: 0.8rem 0;
+  }
+}
